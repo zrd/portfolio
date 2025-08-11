@@ -9,7 +9,7 @@ TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG = 'en'
 
 # Theme related settings
-THEME = 'pelican-themes/pelican-blue'
+THEME = "../portfolio-theme"
 SIDEBAR_DIGEST = 'Student, Athlete, National Merit Scholar'
 FAVICON = 'favicon.ico'
 DISPLAY_PAGES_ON_MENU = True
