@@ -220,7 +220,7 @@ aside > h2 {
 
 
 /*--------Responsive------------*/
-
+/*
 @media (max-width: 800px) {
 
   aside {
@@ -231,7 +231,7 @@ aside > h2 {
     width: 100%;
     padding: 0;
     z-index: 1000;
-    background-color: #2980b9; /* re-apply background so it doesn't show content beneath */
+    background-color: #2980b9;
     padding-top: 0.5rem;
   }
 
@@ -263,6 +263,7 @@ aside > h2 {
     margin: 10px auto;
   }
 }
+*/
 
 /* ===== Portrait (vertical) orientation) ===== */
 @media (orientation: portrait) {
