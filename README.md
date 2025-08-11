@@ -10,7 +10,7 @@ The general workflow is
 git checkout -b feature-branch
 ```
 2. Do your feature development ...
-3. Build source from the `content/` dir (default destination is `output/`)
+3. Build source from the `content/` dir (default destination is `output/`). Note that changes don't need to be committed to be included in the build.
 ```
 pelican content
 ```
@@ -18,7 +18,7 @@ pelican content
 ```
 pelican --listen
 ```
-5. Create (or overwrite if it exists) the `gh-pages` branch from the `output/` dir in your `feature-branch` (note that changes don't need to be committed to be included in the build)
+5. Create (or overwrite if it exists) the `gh-pages` branch from the `output/` dir in your `feature-branch`
 ```
 ghp-import output -b gh-pages
 ```
