@@ -125,7 +125,7 @@ a:hover { text-decoration: underline; }
 /* Sidebar */
 aside {
   font-size: 14px;
-  width: 350px;
+  width: 650px;
   height: 100%;
   position: sticky;
   top: 0;
