@@ -264,6 +264,79 @@ aside > h2 {
   }
 }
 
+/* ===== Portrait (vertical) orientation) ===== */
+@media (orientation: portrait) {
+  aside {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    max-width: none;
+    padding: 0.5rem 0;
+    background-color: #2980b9;
+    text-align: center;
+  }
+
+  body > article {
+    margin: 0 auto;
+    padding: 1em;
+    max-width: 100%;
+  }
+
+  footer {
+    padding: 1em;
+    margin: 0;
+  }
+
+  #avatar {
+    height: 50px;
+    width: 50px;
+    margin: 10px auto;
+  }
+}
+
+/* ===== Landscape (horizontal) orientation) ===== */
+@media (orientation: landscape) {
+  body {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+  }
+
+  aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto; /* independent scrolling */
+    width: 220px;
+    padding: 30px;
+    padding-top: 8%;
+    background-color: #2980b9;
+    box-shadow: 0 0 3px black;
+    color: white;
+    text-align: center;
+    background-size: cover;
+  }
+
+  body > article {
+    margin: 40px auto auto 355px;
+    max-width: 700px;
+    padding: 20px 80px 10px;
+  }
+
+  footer {
+    margin-left: 355px;
+    padding: 20px;
+  }
+}
+
+/* ===== Remove now-redundant mobile width-based rule ===== */
+/* The old @media (max-width: 800px) can be deleted,
+   because the portrait rules above replace it.
+   If you keep it for safety, make sure it comes BEFORE the orientation queries. */
+
+
 img {
   max-width: 100%;
 }
