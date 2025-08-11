@@ -220,50 +220,6 @@ aside > h2 {
 
 
 /*--------Responsive------------*/
-/*
-@media (max-width: 800px) {
-
-  aside {
-    left: 0;
-    max-width: none;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    padding: 0;
-    z-index: 1000;
-    background-color: #2980b9;
-    padding-top: 0.5rem;
-  }
-
-  .nav
-  {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  body > article {
-    margin: 0 auto;
-    padding-top: 5px;
-    max-width: 100%;
-    flex: 1;
-    overflow-y: auto;
-    padding: 1rem;
-  }
-
-  footer
-  {
-    padding: 1em;
-    margin-left: 1em;
-    margin-top: 0;
-  }
-
-  #avatar {
-    height: 50px;
-    width: 50px;
-    margin: 10px auto;
-  }
-}
-*/
 
 /* ===== Portrait (vertical) orientation) ===== */
 @media (orientation: portrait) {
@@ -331,11 +287,6 @@ aside > h2 {
     padding: 20px;
   }
 }
-
-/* ===== Remove now-redundant mobile width-based rule ===== */
-/* The old @media (max-width: 800px) can be deleted,
-   because the portrait rules above replace it.
-   If you keep it for safety, make sure it comes BEFORE the orientation queries. */
 
 
 img {
