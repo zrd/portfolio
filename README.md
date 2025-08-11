@@ -10,21 +10,24 @@ The general workflow is
 git checkout -b feature-branch
 ```
 2. Do your feature development ...
-3. Build source from the content/ dir (default destination is output/)
+3. Build source from the `content/` dir (default destination is `output/`)
 ```
 pelican content
 ```
-4. Serve the site on http://localhost:8000/
+4. Serve the site [locally](http://localhost:8000/) and test it out
 ```
 pelican --listen
 ```
-5. Create (or overwrite if it exists) the gh-pages branch from the output/ dir in your feature-branch (note that changes don't need to be committed to be included in the build)
+5. Create (or overwrite if it exists) the `gh-pages` branch from the `output/` dir in your `feature-branch` (note that changes don't need to be committed to be included in the build)
 ```
 ghp-import output -b gh-pages
 ```
-6. Push from the local gh-pages branches to GitHub, which publishes the site
+6. Push from the local `gh-pages` branch to GitHub, which publishes the site
 ```
 git push origin gh-pages
 ```
 
-The code in this repository only defines the site's content. The layout is defined at build time in a theme subdirectory.
+The code in this repository only defines the site's content. The layout is
+defined in a theme subdirectory, for example `pelican-themes/pelican-blue/`.
+Changes to the theme can be tracked in [a separate repository](https://github.com/zrd/portfolio-theme)
+and included at  build time, as we're doing here.
