@@ -57,23 +57,12 @@ article section .blog-post
 }
 
 /* Body */
-body {
-  margin: 0;
-  display: flex;
-  height: 100vh; /* This is crucial for independent scrolling */
-}
+body {margin: 0}
 body > article, footer {
   line-height: 1.6em;
   display: block;
   max-width: 700px;
-  /* margin: 40px auto auto 355px; */
-  padding: 20px 80px 10px;
-}
-
-/* Article styles */
-article {
-  flex-grow: 1; /* Allows the article to take up the remaining space */
-  overflow-y: auto; /* Enables vertical scrolling for the main content */
+  margin: 40px auto auto 355px;
   padding: 20px 80px 10px;
 }
 
@@ -125,11 +114,9 @@ a:hover { text-decoration: underline; }
 /* Sidebar */
 aside {
   font-size: 14px;
-  width: 650px;
-  height: 100%;
-  position: sticky;
-  top: 0;
-  left: 0;
+  width: 220px; height: 100%;
+  position: fixed;
+  top: 0; left: 0;
   padding: 30px;
   background-color: #2980b9;
   color: white;
@@ -234,8 +221,9 @@ aside > h2 {
     top: 0;
     width: 100%;
     padding: 0;
-    padding-top: 1px;
-    z-index: 10;
+    z-index: 1000;
+    background-color: #2980b9; /* re-apply background so it doesn't show content beneath */
+    padding-top: 0.5rem;
   }
 
   .nav
@@ -248,6 +236,7 @@ aside > h2 {
     margin: 0 auto;
     padding-top: 5px;
     padding: 1em;
+    max-width: 100%;
   }
 
   footer
