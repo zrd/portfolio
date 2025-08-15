@@ -70,6 +70,7 @@
             }(document, "script", "twitter-wjs"));
         </script>
 -->
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
     <nav class="nav">
         <ul class="list-bare">
 
@@ -125,6 +126,14 @@
         </p>
     </footer>
 
-
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector("aside nav");
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+});
+</script>
 </body>
 </html>
