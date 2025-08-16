@@ -225,19 +225,83 @@ aside > h2 {
 
 /*--------Responsive------------*/
 
-/* Portrait base: horizontal nav */
+/* ===== Portrait (vertical) orientation ===== */
 @media (orientation: portrait) {
+  body {
+    display: flex;
+    flex-direction: column; /* stack header/nav and article */
+    margin: 0;
+  }
+
   aside {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #2980b9;
+    padding: 0.5rem 1rem;
+    z-index: 1000;
   }
 
-  .nav {
+  /* Site title stays centered at the top */
+  aside h1 {
+    margin: 0.25rem 0;
+    color: white;
+  }
+
+  /* Burger button aligned to the right */
+  .nav-toggle {
+    display: block;
+    margin-left: auto;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Collapsible nav */
+  nav.nav {
+    display: none; /* hidden until burger toggled */
+    width: 100%;
+    text-align: center;
+  }
+  nav.nav.open {
+    display: block;
+  }
+
+  nav.nav ul {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
+    margin: 0.5rem 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  nav.nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+  }
+
+  body > article {
+    margin: 1rem auto;
+    padding: 1rem;
+    max-width: 90%;
+  }
+
+  footer {
+    margin: 0;
+    padding: 1rem;
   }
 }
+
 
 /* Narrow portrait: hamburger + dropdown */
 @media (orientation: portrait) and (max-width: 500px) {
