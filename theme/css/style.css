@@ -296,7 +296,7 @@ aside > h2 {
   }
 
   /* Collapse nav on small widths */
-  @media (orientation: portrait) and (max-width: 500px) {
+  @media (orientation: portrait) and (max-width: 1250px) {
     .nav-toggle {
     display: block;
     background: none;
