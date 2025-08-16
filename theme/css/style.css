@@ -254,11 +254,6 @@ aside > h2 {
 
   /* Hamburger button */
   .nav-toggle {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
     display: none; /* hidden by default, shown on narrow widths */
   }
 
@@ -301,16 +296,19 @@ aside > h2 {
   }
 
   /* Collapse nav on small widths */
-  @media (max-width: 500px) and (orientation: portrait) {
-    aside {
-      flex-wrap: nowrap;
-      flex-direction: column;
-      align-items: flex-start;
+  @media (orientation: portrait) and (max-width: 500px) {
+    .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
     }
 
-    .nav-toggle {
-      display: block;
-      align-self: flex-end;
+    aside {
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     aside nav {
