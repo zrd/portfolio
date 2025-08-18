@@ -247,6 +247,8 @@ aside > h2 {
     z-index: 1000;
   }
 
+  .goddamnit {text-align: center;}
+
   .site-branding {
     display: flex;
     flex-direction: column; /* stack SITENAME and DIGEST */
