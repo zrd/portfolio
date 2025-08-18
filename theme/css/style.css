@@ -247,6 +247,27 @@ aside > h2 {
     z-index: 1000;
   }
 
+  .site-branding {
+    display: flex;
+    flex-direction: column; /* stack SITENAME and DIGEST */
+    align-items: center;    /* center them horizontally */
+    text-align: center;
+  }
+
+  .site-branding h1 {
+    margin: 0;
+    font-size: 1rem;
+    color: white;
+  }
+
+  .site-branding p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: white;
+    opacity: 0.8;
+  }
+}
+
   /* Site title stays centered at the top */
   aside h1 {
     margin: 0;
