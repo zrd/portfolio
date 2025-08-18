@@ -239,16 +239,17 @@ aside > h2 {
     width: 100%;
     height: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     background-color: #2980b9;
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 0.75rem;
     z-index: 1000;
   }
 
   /* Site title stays centered at the top */
   aside h1 {
-    margin: 0.25rem 0;
+    margin: 0;
     color: white;
   }
 
@@ -276,10 +277,10 @@ aside > h2 {
   nav.nav ul {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
-    gap: 1rem;
-    margin: 0.5rem 0;
+    gap: .75rem;
+    margin: 0;
     padding: 0;
     list-style: none;
   }
@@ -287,7 +288,6 @@ aside > h2 {
   nav.nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 0.5rem;
   }
 
   body > article {
@@ -297,7 +297,7 @@ aside > h2 {
   }
 
   footer {
-    margin: 0;
+    margin-top: auto;
     padding: 1rem;
   }
 }
