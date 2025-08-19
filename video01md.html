@@ -156,25 +156,39 @@
       const nav = document.querySelector(".nav");
       const toggle = document.querySelector(".nav-toggle");
 
+      // ✅ Set to true to always show burger (ignore overflow detection)
+      const FORCE_BURGER = false;
+
       function checkOverflow() {
-        // Reset to default state before measuring
         nav.classList.remove("collapsed", "show");
         toggle.style.display = "none";
 
+        if (FORCE_BURGER) {
+          // Debug: force burger mode
+          nav.classList.add("collapsed");
+          toggle.style.display = "block";
+          console.log("FORCE_BURGER active: hiding links, showing burger");
+          return;
+        }
+
+        // Normal behavior
         if (nav.scrollWidth > nav.clientWidth) {
           nav.classList.add("collapsed");
-          toggle.style.display = "block";  // show hamburger
+          toggle.style.display = "block";
+          console.log("Nav collapsed: too wide, showing burger");
+        } else {
+          console.log("Nav fits: links visible, burger hidden");
         }
       }
 
       toggle.addEventListener("click", () => {
         nav.classList.toggle("show");
-  });
+        console.log("Burger clicked: nav.show =", nav.classList.contains("show"));
+      });
 
-  window.addEventListener("resize", checkOverflow);
-  checkOverflow();
-});
-
+      window.addEventListener("resize", checkOverflow);
+      checkOverflow();
+    });
 </script>
 
 </body>
