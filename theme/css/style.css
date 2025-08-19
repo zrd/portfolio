@@ -239,7 +239,7 @@ aside > h2 {
     width: 100%;
     height: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     background-color: #2980b9;
@@ -248,10 +248,18 @@ aside > h2 {
   }
 
   .site-branding {
+    /*
     display: flex;
-    flex-direction: column; /* stack SITENAME and DIGEST */
-    align-items: center;    /* center them horizontally */
+    flex-direction: column; /* stack SITENAME and DIGEST
+    align-items: center;    /* center them horizontally
+    */
     text-align: center;
+    margin-bottom: 0.5rem;   /* spacing between title/digest and nav */
+  }
+
+  .site-branding h1,
+  .site-branding p {
+    margin: 0.25rem 0;
   }
 
   .site-branding h1 {
@@ -297,7 +305,7 @@ aside > h2 {
   nav.nav ul {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
     gap: .75rem;
     margin: 0;
@@ -308,6 +316,20 @@ aside > h2 {
   nav.nav ul li a {
     color: white;
     text-decoration: none;
+  }
+
+  .nav ul {
+    display: flex;
+    flex-direction: row;     /* make nav horizontal */
+    flex-wrap: wrap;         /* wrap if too many items */
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav li {
+    margin: 0 0.5rem;
+    list-style: none;
   }
 
   body > article {
