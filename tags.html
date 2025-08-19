@@ -43,20 +43,24 @@
 <body>
 <!-- Sidebar -->
 <aside>
-    <!--<center><a href="https://zrd.github.io/portfolio"><img id="avatar" src=""></a></center>-->
     <div class="site-branding">
-    <h1>The Author's Portfolio</h1>
-      <p>Student, Athlete, National Merit Scholar</p>
-  </div>
+      <h1>The Author's Portfolio</h1>
+        <p>Student, Athlete, National Merit Scholar</p>
+    </div>
 
-  <nav class="nav">
-    <ul class="list-bare">
-        <li><a class="nav__link" href="">Home</a></li>
-          <li><a class="nav__link" href="https://zrd.github.io/portfolio/pages/about.html">About</a></li>
-          <li><a class="nav__link" href="https://zrd.github.io/portfolio/pages/awards.html">Awards</a></li>
-          <li><a class="nav__link" href="https://zrd.github.io/portfolio/pages/resume.html">Résumé</a></li>
-    </ul>
-  </nav>
+    <!-- Hamburger toggle -->
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+    <!-- Nav links -->
+    <nav class="nav">
+      <ul class="list-bare">
+          <li><a class="nav__link" href="">Home</a></li>
+
+            <li><a class="nav__link" href="https://zrd.github.io/portfolio/pages/about.html">About</a></li>
+            <li><a class="nav__link" href="https://zrd.github.io/portfolio/pages/awards.html">Awards</a></li>
+            <li><a class="nav__link" href="https://zrd.github.io/portfolio/pages/resume.html">Résumé</a></li>
+      </ul>
+    </nav>
 
     <p class="social">
                 <a href="https://www.linkedin.com/" target="_blank"><img
@@ -101,16 +105,35 @@
         </p>
     </footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".nav");
-  if (toggle && nav) {
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("show");
-    });
-  }
-});
-</script>
+    <script>
+        function checkNavOverflow() {
+          const nav = document.querySelector('.nav');
+          const toggle = document.querySelector('.nav-toggle');
+
+          // Check if nav content overflows horizontally
+          if (nav.scrollWidth > nav.clientWidth * 1.05) {
+            nav.classList.add('collapsed');   // hide links by default
+            toggle.style.display = 'block';   // show burger
+          } else {
+            nav.classList.remove('collapsed');
+            toggle.style.display = 'none';    // hide burger
+          }
+        }
+
+        function setupNavToggle() {
+          const nav = document.querySelector('.nav');
+          const toggle = document.querySelector('.nav-toggle');
+
+          toggle.addEventListener('click', () => {
+            nav.classList.toggle('show');
+          });
+        }
+
+        window.addEventListener('resize', checkNavOverflow);
+        window.addEventListener('load', () => {
+          checkNavOverflow();
+          setupNavToggle();
+        });
+    </script>
 </body>
 </html>
