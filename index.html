@@ -146,35 +146,31 @@
         </p>
     </footer>
 
-    <script>
-        function checkNavOverflow() {
-          const nav = document.querySelector('.nav');
-          const toggle = document.querySelector('.nav-toggle');
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+      const nav = document.querySelector(".nav");
+      const toggle = document.querySelector(".nav-toggle");
 
-          // Check if nav content overflows horizontally
-          if (nav.scrollWidth > nav.clientWidth * 1.05) {
-            nav.classList.add('collapsed');   // hide links by default
-            toggle.style.display = 'block';   // show burger
-          } else {
-            nav.classList.remove('collapsed');
-            toggle.style.display = 'none';    // hide burger
-          }
+      function checkOverflow() {
+        // Reset to default state before measuring
+        nav.classList.remove("collapsed", "show");
+        toggle.style.display = "none";
+
+        if (nav.scrollWidth > nav.clientWidth) {
+          nav.classList.add("collapsed");
+          toggle.style.display = "block";  // show hamburger
         }
+      }
 
-        function setupNavToggle() {
-          const nav = document.querySelector('.nav');
-          const toggle = document.querySelector('.nav-toggle');
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+  });
 
-          toggle.addEventListener('click', () => {
-            nav.classList.toggle('show');
-          });
-        }
+  window.addEventListener("resize", checkOverflow);
+  checkOverflow();
+});
 
-        window.addEventListener('resize', checkNavOverflow);
-        window.addEventListener('load', () => {
-          checkNavOverflow();
-          setupNavToggle();
-        });
-    </script>
+</script>
+
 </body>
 </html>
