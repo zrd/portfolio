@@ -350,7 +350,7 @@ aside > h2 {
 
 
 /* Narrow portrait: hamburger + dropdown */
-@media (orientation: portrait) and (max-width: 500px) {
+@media (orientation: portrait) and (max-width: 1250px) {
   .nav-toggle {
     display: block; /* show hamburger here */
     background: none;
