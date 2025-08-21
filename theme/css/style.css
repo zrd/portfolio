@@ -172,48 +172,15 @@ aside > h2 {
 
 .nav
 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  /*
+  display: block;
   margin-left: -30px;
   margin-right: -30px;
   border: 1px solid #328cc7;
   margin-top: 40px;
-  */
+
   /* DEBUG */
   outline: 2px solid red;
   background: rgba(255,0,0,0.05);
-}
-
-/* Hamburger button */
-.nav-toggle {
-  display: none; /* hidden by default, shown on narrow widths in portrait orientation */
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  /* DEBUG */
-  background: rgba(0,0,255,0.1);
-}
-
-/* Collapsed state = hide nav (until user clicks burger) */
-.nav.collapsed {
-  display: none;
-  /* DEBUG */
-  outline: 2px solid orange;
-  background: rgba(255,165,0,0.1);
-}
-
-/* When burger is clicked, show nav vertically */
-.nav.show {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* DEBUG */
-  outline: 2px solid green;
-  background: rgba(0,255,0,0.1);
 }
 
 .nav > ul > li
@@ -233,6 +200,16 @@ aside > h2 {
     background-color: #328cc7;
 }
 
+.nav-bottom {
+  /* DEBUG */
+  border: 2px solid green;
+}
+
+.nav-bottom li {
+  margin: 0 0.5rem;
+  list-style: none;
+}
+
 .list-bare
 {
   list-style: none;
@@ -240,12 +217,10 @@ aside > h2 {
   margin: 0;
 }
 
-.nav__link 
-{
-  display: block;
-  padding: 0.77273rem 0;
-  border-bottom: 1px solid #328cc7;
-}
+.nav__link {
+    padding: 0.5rem;
+    display: block;
+  }
 
 
 .blog_roll_link 
@@ -309,26 +284,13 @@ aside > h2 {
     color: white;
   }
 
-  /* Burger button aligned to the right
-  .nav-toggle {
-    display: block;
-    margin-left: auto;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-  */
-
-  /* Collapsible nav */
   nav.nav {
-    display: none; /* hidden until burger toggled */
+    display: block;
     width: 100%;
     text-align: center;
-  }
-  nav.nav.open {
-    display: block;
+    /* DEBUG */
+    outline: 2px solid orange;
+    background: rgba(255,0,0,0.05);
   }
 
   nav.nav ul {
@@ -347,37 +309,19 @@ aside > h2 {
     text-decoration: none;
   }
 
-  .nav.collapsed {
-    display: none; /* start hidden */
-  }
-
-  /* When burger is toggled open */
-  .nav.collapsed.show {
-    display: block; /* make nav visible */
-  }
-
-  .nav.collapsed.show ul {
-    display: flex;
-    flex-direction: column;   /* 👈 stack links vertically */
-    align-items: flex-start;  /* left-align */
-    gap: 0.5rem;              /* space between links */
-    list-style: none;         /* keep your theme clean */
-    padding: 0.5rem 1rem;
-    border: 1px solid #ddd;
-  }
-
-  .nav ul {
-    display: flex;
-    flex-direction: row;     /* make nav horizontal */
-    flex-wrap: wrap;         /* wrap if too many items */
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-  }
-
   .nav li {
     margin: 0 0.5rem;
     list-style: none;
+  }
+
+  .nav-bottom {
+    display: flex;
+  }
+
+  .social {
+    margin-top: 20px;
+    /* DEBUG */
+    border: 1px solid purple;
   }
 
   body > article {
@@ -393,25 +337,25 @@ aside > h2 {
 }
 
 
-/* Narrow portrait: hamburger + dropdown */
+/* Narrow portrait */
 @media (orientation: portrait) and (max-width: 1250px) {
-  .nav-toggle {
-    display: inline-block;
-  }
-
-  .nav {
-    display: none; /* start hidden */
+  nav.nav {
+    display: flex;
     flex-direction: column;
     width: 100%;
-  }
-
-  .nav.show {
-    display: block; /* show when toggled */
+    /* DEBUG */
+    outline: 1px dashed yellow;
+    background: rgba(255,0,0,0.05);
   }
 
   .nav__link {
-    padding: 0.5rem;
     display: block;
+    padding: 0.77273rem 0;
+    border-bottom: 1px solid #328cc7;
+  }
+
+  .social {
+    margin-top: 10px;
   }
 }
 

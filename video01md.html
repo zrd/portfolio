@@ -44,48 +44,46 @@
 <!-- Sidebar -->
 <aside>
     <div class="site-branding">
+    <!--<center><a href="https://zrd.github.io/portfolio"><img id="avatar" src=""></a></center>-->
       <h1>The Author's Portfolio</h1>
         <p>Student, Athlete, National Merit Scholar</p>
     </div>
 
-    <!-- Hamburger toggle -->
-    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-
-    <!-- Nav links -->
     <nav class="nav">
       <ul class="list-bare">
           <li><a class="nav__link" href="">Home</a></li>
-
             <li><a class="nav__link" href="https://zrd.github.io/portfolio/pages/about.html">About</a></li>
             <li><a class="nav__link" href="https://zrd.github.io/portfolio/pages/awards.html">Awards</a></li>
             <li><a class="nav__link" href="https://zrd.github.io/portfolio/pages/resume.html">Résumé</a></li>
       </ul>
     </nav>
 
-    <p class="social">
-                <a href="https://www.linkedin.com/" target="_blank"><img
-                        src="https://zrd.github.io/portfolio/theme/images/icons/linkedin.png"></a>
-                <a href="https://github.com/zrd" target="_blank"><img
-                        src="https://zrd.github.io/portfolio/theme/images/icons/github.png"></a>
-                <a href="https://x.com/the_authors_fake_twitter_url" target="_blank"><img
-                        src="https://zrd.github.io/portfolio/theme/images/icons/twitter.png"></a>
-            <a href="https://zrd.github.io/portfolio/feeds/all.atom.xml" rel="alternate">
-                <img src="https://zrd.github.io/portfolio/theme/images/icons/rss.png"></a>
-    </p>
+    <div class="nav-bottom">
+        <p class="social">
+                    <a href="https://www.linkedin.com/" target="_blank"><img
+                            src="https://zrd.github.io/portfolio/theme/images/icons/linkedin.png"></a>
+                    <a href="https://github.com/zrd" target="_blank"><img
+                            src="https://zrd.github.io/portfolio/theme/images/icons/github.png"></a>
+                    <a href="https://x.com/the_authors_fake_twitter_url" target="_blank"><img
+                            src="https://zrd.github.io/portfolio/theme/images/icons/twitter.png"></a>
+                <a href="https://zrd.github.io/portfolio/feeds/all.atom.xml" rel="alternate">
+                    <img src="https://zrd.github.io/portfolio/theme/images/icons/rss.png"></a>
+        </p>
 
-        <h2>Categories</h2>
-        <ul class="navbar">
-                <li class="active"><a
-                        href="https://zrd.github.io/portfolio/category/misc.html">misc</a></li>
-        </ul>
+            <h2>Categories</h2>
+            <ul class="navbar">
+                    <li class="active"><a
+                            href="https://zrd.github.io/portfolio/category/misc.html">misc</a></li>
+            </ul>
 
-        <h2 class="blog_roll_link"><br/>LINKS</h2>
-        <ul class="navbar">
-                <li><a href="https://getpelican.com/">Pelican</a></li>
-                <li><a href="https://www.python.org/">Python.org</a></li>
-                <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
-                <li><a href="#">You can modify those links in your config file</a></li>
-        </ul>
+            <h2 class="blog_roll_link"><br/>LINKS</h2>
+            <ul class="navbar">
+                    <li><a href="https://getpelican.com/">Pelican</a></li>
+                    <li><a href="https://www.python.org/">Python.org</a></li>
+                    <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                    <li><a href="#">You can modify those links in your config file</a></li>
+            </ul>
+    </div>
 
 </aside>
 
@@ -150,46 +148,6 @@
                 href="https://parbhatpuri.com/">@parbhat</a>.
         </p>
     </footer>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-      const nav = document.querySelector(".nav");
-      const toggle = document.querySelector(".nav-toggle");
-
-      // ✅ Set to true to always show burger (ignore overflow detection)
-      const FORCE_BURGER = false;
-
-      function checkOverflow() {
-        nav.classList.remove("collapsed", "show");
-        toggle.style.display = "none";
-
-        if (FORCE_BURGER) {
-          // Debug: force burger mode
-          nav.classList.add("collapsed");
-          toggle.style.display = "block";
-          console.log("FORCE_BURGER active: hiding links, showing burger");
-          return;
-        }
-
-        // Normal behavior
-        if (nav.scrollWidth > nav.clientWidth) {
-          nav.classList.add("collapsed");
-          toggle.style.display = "block";
-          console.log("Nav collapsed: too wide, showing burger");
-        } else {
-          console.log("Nav fits: links visible, burger hidden");
-        }
-      }
-
-      toggle.addEventListener("click", () => {
-        nav.classList.toggle("show");
-        console.log("Burger clicked: nav.show =", nav.classList.contains("show"));
-      });
-
-      window.addEventListener("resize", checkOverflow);
-      checkOverflow();
-    });
-</script>
 
 </body>
 </html>
