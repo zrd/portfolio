@@ -343,7 +343,7 @@ aside > h2 {
 
 
 /* Narrow portrait */
-@media (orientation: portrait) and (max-width: 1250px) {
+@media (orientation: portrait) and (max-width: 500px) {
   nav.nav {
     display: flex;
     flex-direction: column;
