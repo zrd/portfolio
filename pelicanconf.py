@@ -14,7 +14,7 @@ SIDEBAR_DIGEST = 'Student, Athlete, National Merit Scholar'
 FAVICON = 'favicon.ico'
 DISPLAY_PAGES_ON_MENU = True
 TWITTER_USERNAME = "the_authors_fake_twitter_url"
-MENUITEMS = (('Home', SITEURL),)
+MENUITEMS = ()
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
