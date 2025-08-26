@@ -7,7 +7,7 @@ html {
 /* Titles */
 h1 { text-transform: uppercase }
 h1, h2 { 
-	font-weight: normal; 
+  font-weight: normal;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -143,7 +143,7 @@ aside > ul {
 }
 aside > h2 { 
   text-transform: uppercase;
-  font-size: 14px; 
+  font-size: 2rem;
   margin-bottom: 5px;
 }
 
@@ -169,6 +169,14 @@ aside > h2 {
   text-decoration: none;
 }
 
+.site-branding h1 {
+  font-size: 1.8rem;
+}
+
+.site-branding p {
+  font-size: 1.2rem;
+}
+
 .social
 {
   display: inline-block;
@@ -183,9 +191,10 @@ aside > h2 {
   border: 1px solid #328cc7;
   margin-top: 40px;
 
-  /* DEBUG */
+  /* DEBUG
   outline: 2px solid red;
   background: rgba(255,0,0,0.05);
+  */
 }
 
 .nav > ul > li
@@ -206,8 +215,9 @@ aside > h2 {
 }
 
 .nav-bottom {
-  /* DEBUG */
+  /* DEBUG
   border: 2px solid green;
+   */
 }
 
 .nav-bottom li {
@@ -253,7 +263,7 @@ aside > h2 {
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     background-color: #2980b9;
     padding: 0.25rem 0.75rem;
@@ -261,7 +271,7 @@ aside > h2 {
   }
 
   .site-branding {
-    text-align: center;
+    text-align: left;
     margin-bottom: 0.5rem;   /* spacing between title/digest and nav */
   }
 
@@ -272,13 +282,13 @@ aside > h2 {
 
   .site-branding h1 {
     margin: 0;
-    font-size: 1rem;
+    /* font-size: 1rem; */
     color: white;
   }
 
   .site-branding p {
     margin: 0;
-    font-size: 0.8rem;
+    /* font-size: 0.8rem; */
     color: white;
     opacity: 0.8;
   }
@@ -289,13 +299,18 @@ aside > h2 {
     color: white;
   }
 
+  .nav {
+    margin-top: 5px;
+  }
+
   nav.nav {
     display: block;
     width: 100%;
     text-align: center;
-    /* DEBUG */
+    /* DEBUG
     outline: 2px solid orange;
     background: rgba(255,0,0,0.05);
+     */
   }
 
   nav.nav ul {
@@ -323,10 +338,19 @@ aside > h2 {
     display: flex;
   }
 
+  .nav-bottom p.social {
+    order: 1;           /* default is 0 so this will appear after any element without an explicit order */
+  }
+
+  .nav-bottom h2, ul {
+    display: none;
+  }
+
   .social {
-    margin-top: 20px;
-    /* DEBUG */
+    margin-top: 1rem;
+    /*
     border: 1px solid purple;
+     */
   }
 
   body > article {
@@ -348,9 +372,10 @@ aside > h2 {
     display: flex;
     flex-direction: column;
     width: 100%;
-    /* DEBUG */
+    /* DEBUG
     outline: 1px dashed yellow;
     background: rgba(255,0,0,0.05);
+     */
   }
 
   .nav__link {
