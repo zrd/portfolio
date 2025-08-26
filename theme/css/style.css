@@ -454,3 +454,10 @@ aside > h2 {
     padding: 1rem;
   }
 }
+
+/* DEBUG: narrow landscape test */
+@media (orientation: landscape) and (max-width: 1000px) {
+  body {
+    background: hotpink !important;
+  }
+}
