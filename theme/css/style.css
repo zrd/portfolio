@@ -61,17 +61,29 @@ article section .blog-post
 
 /* Body */
 body {
-    display: flex;
-    flex-direction: row;
+    display: block; !important;
     margin: 0;
 }
-body > article, footer {
+body > article {
   line-height: 1.6em;
   display: block;
   max-width: 700px;
-  /* margin: 40px auto auto 355px; */
   margin: 40px auto auto;
   padding: 20px 80px 10px;
+  /* DEBUG
+  border: 1px solid red;
+   */
+}
+
+footer {
+  display: block;
+  width: 100%;
+  margin: 40px auto 0;  /* push it below */
+  padding: 20px;
+  max-width: none;      /* let footer span full width */
+  /* DEBUG
+  border: 1px solid green;
+   */
 }
 
 article ol.posts
@@ -429,35 +441,67 @@ aside > h2 {
   }
 }
 
-/* Narrow landscape */
-@media (orientation: landscape) and (max-width: 500px) {
+/* --- Force footer below article in landscape --- */
+@media (orientation: landscape) {
+  /* Kill flex on body so footer drops below */
   body {
-    flex-direction: column; /* stack sidebar on top */
+    display: block !important;
   }
 
+  /* Keep your existing fixed sidebar behavior */
   aside {
-    position: relative;
-    width: 100%;
-    height: auto;
-    padding: 1rem;
-    text-align: left;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    width: 220px;
+    padding: 30px;
+    padding-top: 8%;
+    background-color: #2980b9;
+    box-shadow: 0 0 3px black;
+    color: white;
+    text-align: center;
+    background-size: cover;
   }
 
+  /* Article uses left margin to clear the fixed sidebar */
   body > article {
-    margin: 1rem auto;
-    padding: 1rem;
-    max-width: 95%;   /* let it breathe */
+    margin: 40px auto auto 355px !important; /* your existing spacing */
+    max-width: 1500px;
+    padding: 20px 80px 10px;
   }
 
+  /* Footer sits below article and spans the content column */
   footer {
-    margin: 1rem auto;
-    padding: 1rem;
+    display: block !important;
+    width: auto;
+    max-width: none !important;
+    margin: 20px 80px 20px 355px !important; /* align with article column */
+    padding: 20px;
   }
 }
 
-/* DEBUG: narrow landscape test */
+/* --- Make article/footers wide on narrow landscape screens --- */
 @media (orientation: landscape) and (max-width: 1000px) {
-  body {
-    background: hotpink !important;
+  /* Let the content breathe on small landscape devices */
+  body > article {
+    margin: 1rem !important;           /* remove big left margin */
+    max-width: none !important;        /* closer to full width */
+    padding: 1rem;
+  }
+
+  footer {
+    margin: 1rem !important;           /* full-width footer under article */
+    max-width: none !important;
+    padding: 1rem;
+  }
+
+  /* Optionally make the sidebar non-fixed to reclaim space */
+  aside {
+    position: static;                   /* or 'relative' */
+    width: 100%;
+    height: auto;
+    padding: 1rem;
   }
 }
