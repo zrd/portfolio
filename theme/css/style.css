@@ -407,44 +407,68 @@ aside > h2 {
   }
 }
 
-/* --- Force footer below article in landscape --- */
+/* === Landscape layout (place near end of stylesheet) === */
 @media (orientation: landscape) {
-  /* Kill flex on body so footer drops below */
-  body {
-    display: block !important;
+  :root {
+    --aside-w: 220px;      /* tweak if you want a wider/narrower sidebar */
+    --content-pad: 24px;   /* inner padding for article/footer */
   }
 
-  /* Keep your existing fixed sidebar behavior */
+  /* Put article + footer back into normal block flow so footer sits BELOW article */
+  body {
+    display: block;
+    margin: 0;
+  }
+
+  /* Fixed, independently scrollable sidebar */
   aside {
     position: fixed;
-    left: 0;
     top: 0;
-    height: 100vh;
-    overflow-y: auto;
-    width: 220px;
-    padding: 30px;
-    padding-top: 8%;
+    left: 0;
+    width: var(--aside-w);
+    height: 100vh;                    /* full viewport height */
+    overflow-y: auto;                 /* independent scrolling */
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+    padding: 24px;                    /* replaces any % top padding */
+    /* keep your existing colors/shadows: */
     background-color: #2980b9;
-    box-shadow: 0 0 3px black;
     color: white;
+    box-shadow: 0 0 3px black;
     text-align: center;
     background-size: cover;
   }
 
-  /* Article uses left margin to clear the fixed sidebar */
+  /* Main content column (to the right of the fixed aside) */
   body > article {
-    margin: 40px auto auto 355px !important; /* your existing spacing */
-    max-width: 1500px;
-    padding: 20px 80px 10px;
+    box-sizing: border-box;
+    /* occupy the remaining viewport width beside the sidebar */
+    width: calc(100vw - var(--aside-w));
+    /* optional ceiling; remove if you truly want “near 100%” at all widths */
+    max-width: 1200px;
+    padding: 20px var(--content-pad);
+    /* push it to the right of the fixed sidebar */
+    margin: 40px auto 0 calc(var(--aside-w));
+    line-height: 1.6em;
   }
 
-  /* Footer sits below article and spans the content column */
+  /* Footer follows article and aligns with the same content column */
   footer {
-    display: block !important;
-    width: auto;
-    max-width: none !important;
-    margin: 20px 80px 20px 355px !important; /* align with article column */
-    padding: 20px;
+    box-sizing: border-box;
+    width: calc(100vw - var(--aside-w));
+    max-width: 1200px;                /* match article for alignment */
+    margin: 20px auto 40px calc(var(--aside-w));
+    padding: 20px var(--content-pad);
+    display: block;
   }
 }
+
+/* Make the article/footer use (nearly) full remaining width on smaller landscape screens */
+@media (orientation: landscape) and (max-width: 1024px) {
+  body > article,
+  footer {
+    max-width: none;
+  }
+}
+
 
