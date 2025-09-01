@@ -248,6 +248,27 @@ aside > h2 {
   list-style: none;
 }
 
+/* Center the nav-bottom section as a whole */
+.nav-bottom {
+  text-align: center;
+}
+
+/* Center each UL under its H2 */
+.nav-bottom ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;          /* center the UL itself */
+  display: inline-block;   /* shrink to fit contents */
+  text-align: center;        /* keep list items aligned left */
+}
+
+/* Make list items stack cleanly */
+.nav-bottom ul li {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
 .list-bare
 {
   list-style: none;
@@ -365,7 +386,8 @@ aside > h2 {
     order: 1;           /* default is 0 so this will appear after any element without an explicit order */
   }
 
-  .nav-bottom h2, ul {
+  .nav-bottom h2,
+  .nav-bottom ul {
     display: none;
   }
 
@@ -475,26 +497,3 @@ aside > h2 {
     max-width: none;
   }
 }
-
-/* Center the nav-bottom section as a whole */
-aside .nav-bottom {
-  text-align: center;
-}
-
-/* Center each UL under its H2 */
-aside .nav-bottom ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;          /* center the UL itself */
-  display: inline-block;   /* shrink to fit contents */
-  text-align: center;        /* keep list items aligned left */
-}
-
-/* Make list items stack cleanly */
-aside .nav-bottom ul li {
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-
-
