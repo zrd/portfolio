@@ -61,13 +61,15 @@ article section .blog-post
 
 /* Body */
 body {
-    display: block; !important;
+    display: flex;
+    flex-direction: row;
     margin: 0;
 }
 body > article {
   line-height: 1.6em;
   display: block;
   max-width: 700px;
+  /* margin: 40px auto auto 355px; */
   margin: 40px auto auto;
   padding: 20px 80px 10px;
   /* DEBUG
@@ -405,42 +407,6 @@ aside > h2 {
   }
 }
 
-/* ===== Landscape (horizontal) orientation) ===== */
-@media (orientation: landscape) {
-  body {
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-  }
-
-  aside {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    overflow-y: auto; /* independent scrolling */
-    width: 220px;
-    padding: 30px;
-    padding-top: 8%;
-    background-color: #2980b9;
-    box-shadow: 0 0 3px black;
-    color: white;
-    text-align: center;
-    background-size: cover;
-  }
-
-  body > article {
-    margin: 40px auto auto 355px;
-    max-width: 1500px;
-    padding: 20px 80px 10px;
-  }
-
-  footer {
-    margin-left: 355px;
-    padding: 20px;
-  }
-}
-
 /* --- Force footer below article in landscape --- */
 @media (orientation: landscape) {
   /* Kill flex on body so footer drops below */
@@ -482,26 +448,3 @@ aside > h2 {
   }
 }
 
-/* --- Make article/footers wide on narrow landscape screens --- */
-@media (orientation: landscape) and (max-width: 1000px) {
-  /* Let the content breathe on small landscape devices */
-  body > article {
-    margin: 1rem !important;           /* remove big left margin */
-    max-width: none !important;        /* closer to full width */
-    padding: 1rem;
-  }
-
-  footer {
-    margin: 1rem !important;           /* full-width footer under article */
-    max-width: none !important;
-    padding: 1rem;
-  }
-
-  /* Optionally make the sidebar non-fixed to reclaim space */
-  aside {
-    position: static;                   /* or 'relative' */
-    width: 100%;
-    height: auto;
-    padding: 1rem;
-  }
-}

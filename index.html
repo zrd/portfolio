@@ -143,5 +143,44 @@
         </p>
     </footer>
 
+    <script>
+    (function() {
+      const debugBox = document.createElement("div");
+      debugBox.style.position = "fixed";
+      debugBox.style.bottom = "0";
+      debugBox.style.right = "0";
+      debugBox.style.background = "rgba(0,0,0,0.7)";
+      debugBox.style.color = "lime";
+      debugBox.style.padding = "4px 8px";
+      debugBox.style.font = "12px monospace";
+      debugBox.style.zIndex = "9999";
+      debugBox.style.pointerEvents = "none"; // click-through
+      if (location.search.includes("debug=1") || location.search.includes("debug=true")) {
+        debugBox.style.display = "block";
+      }
+      else {
+        debugBox.style.display = "none";
+      }
+
+
+      document.body.appendChild(debugBox);
+
+      function update() {
+        debugBox.textContent =
+          `width: ${window.innerWidth}px | height: ${window.innerHeight}px`;
+      }
+
+      window.addEventListener("resize", update);
+      update();
+
+      // Press `d` to toggle visibility
+      document.addEventListener("keydown", e => {
+        if (e.key.toLowerCase() === "d") {
+          debugBox.style.display =
+            debugBox.style.display === "none" ? "block" : "none";
+        }
+      });
+    })();
+    </script>
 </body>
 </html>
