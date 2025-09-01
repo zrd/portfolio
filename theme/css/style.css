@@ -151,12 +151,17 @@ aside {
   padding-top: 8%;
   background-size: cover;
   overflow-y: auto;
+  text-align: center;
 }
 
 aside > ul {
   list-style-type: none;
   padding: 0px 10px;
+  padding-left: 0;
   margin-top: 0px;
+  margin-left: 0;
+  display: inline-block;
+  text-align: left;
 }
 
 aside > h2 { 
@@ -469,6 +474,27 @@ aside > h2 {
   footer {
     max-width: none;
   }
+}
+
+/* Center the nav-bottom section as a whole */
+aside .nav-bottom {
+  text-align: center;
+}
+
+/* Center each UL under its H2 */
+aside .nav-bottom ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;          /* center the UL itself */
+  display: inline-block;   /* shrink to fit contents */
+  text-align: center;        /* keep list items aligned left */
+}
+
+/* Make list items stack cleanly */
+aside .nav-bottom ul li {
+  margin: 0;
+  padding: 0;
+  display: block;
 }
 
 
